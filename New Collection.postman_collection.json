@@ -1,0 +1,1396 @@
+{
+	"info": {
+		"_postman_id": "142bcb59-3cba-46e0-b5d6-235c43520b1d",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "11592768"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"item": [
+				{
+					"name": "https://www.4devs.com.br/ferramentas_online.php",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Verifica se o campo \"idade\" contém um valor numérico maior que zero\r",
+									"pm.test(\"Campo 'idade' possui valor válido\", function () {\r",
+									"    var idade = pm.response.json()[0].idade;\r",
+									"    pm.expect(idade).to.be.above(0, \"A idade deve ser maior que zero\");\r",
+									"});\r",
+									"\r",
+									"// Verifica se o campo \"sexo\" é igual a \"Masculino\" na resposta\r",
+									"pm.test(\"Campo 'sexo' é igual a 'Masculino'\", function () {\r",
+									"    var sexo = pm.response.json()[0].sexo;\r",
+									"    pm.expect(sexo).to.eql(\"Masculino\");\r",
+									"});\r",
+									"\r",
+									"// Verifica se o campo \"sexo\" é igual a \"Feminino\" na resposta\r",
+									"pm.test(\"Campo 'sexo' é igual a 'Feminino'\", function () {\r",
+									"    var sexo = pm.response.json()[0].sexo;\r",
+									"    pm.expect(sexo).to.eql(\"Feminino\");\r",
+									"});\r",
+									"\r",
+									"// Extrair o response body como JSON\r",
+									"var jsonData = pm.response.json();\r",
+									"\r",
+									"// Acessar o valor do campo CPF\r",
+									"var cpf = jsonData[0].cpf;\r",
+									"\r",
+									"// Armazenar o CPF em uma variável global no Postman chamada \"CPF\"\r",
+									"pm.globals.set(\"CPF\", cpf);\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "acao",
+									"value": "gerar_pessoa",
+									"type": "text"
+								},
+								{
+									"key": "pontuacao",
+									"value": "N",
+									"type": "text"
+								},
+								{
+									"key": "sexo",
+									"value": "H",
+									"type": "text"
+								},
+								{
+									"key": "txt_qtde",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.4devs.com.br/ferramentas_online.php",
+							"protocol": "https",
+							"host": [
+								"www",
+								"4devs",
+								"com",
+								"br"
+							],
+							"path": [
+								"ferramentas_online.php"
+							]
+						},
+						"description": "TestePrime"
+					},
+					"response": [
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 15:54:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"Ruan Gabriel Alves\",\n        \"idade\": 37,\n        \"cpf\": \"30104526408\",\n        \"rg\": \"248055069\",\n        \"data_nasc\": \"18/03/1986\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n        \"mae\": \"Luzia Bianca\",\n        \"pai\": \"Nelson Erick Tiago Alves\",\n        \"email\": \"ruan-alves88@granvale.com.br\",\n        \"senha\": \"65RZP93sYB\",\n        \"cep\": \"49032383\",\n        \"endereco\": \"Rua C\",\n        \"numero\": 517,\n        \"bairro\": \"Farolândia\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7928448221\",\n        \"celular\": \"79999418861\",\n        \"altura\": \"1,68\",\n        \"peso\": 84,\n        \"tipo_sanguineo\": \"O-\",\n        \"cor\": \"roxo\"\n    }\n]"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 15:54:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "346"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"Ruan Gabriel Alves\",\n        \"idade\": 37,\n        \"cpf\": \"30104526408\",\n        \"rg\": \"248055069\",\n        \"data_nasc\": \"18/03/1986\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n        \"mae\": \"Luzia Bianca\",\n        \"pai\": \"Nelson Erick Tiago Alves\",\n        \"email\": \"ruan-alves88@granvale.com.br\",\n        \"senha\": \"65RZP93sYB\",\n        \"cep\": \"49032383\",\n        \"endereco\": \"Rua C\",\n        \"numero\": 517,\n        \"bairro\": \"Farolândia\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7928448221\",\n        \"celular\": \"79999418861\",\n        \"altura\": \"1,68\",\n        \"peso\": 84,\n        \"tipo_sanguineo\": \"O-\",\n        \"cor\": \"roxo\"\n    }\n]"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 16:12:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "365"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"José Daniel Henry da Cruz\",\n        \"idade\": 18,\n        \"cpf\": \"54140500824\",\n        \"rg\": \"156333351\",\n        \"data_nasc\": \"20/03/2005\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n        \"mae\": \"Giovana Carla Letícia\",\n        \"pai\": \"Leonardo Renato da Cruz\",\n        \"email\": \"jose-dacruz78@band.com.br\",\n        \"senha\": \"oy5U2UAFnG\",\n        \"cep\": \"49043687\",\n        \"endereco\": \"Travessa Santa Cruz\",\n        \"numero\": 775,\n        \"bairro\": \"Santa Maria\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7939761774\",\n        \"celular\": \"79981214497\",\n        \"altura\": \"1,62\",\n        \"peso\": 89,\n        \"tipo_sanguineo\": \"A+\",\n        \"cor\": \"laranja\"\n    }\n]"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 16:12:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "365"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"José Daniel Henry da Cruz\",\n        \"idade\": 18,\n        \"cpf\": \"54140500824\",\n        \"rg\": \"156333351\",\n        \"data_nasc\": \"20/03/2005\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n        \"mae\": \"Giovana Carla Letícia\",\n        \"pai\": \"Leonardo Renato da Cruz\",\n        \"email\": \"jose-dacruz78@band.com.br\",\n        \"senha\": \"oy5U2UAFnG\",\n        \"cep\": \"49043687\",\n        \"endereco\": \"Travessa Santa Cruz\",\n        \"numero\": 775,\n        \"bairro\": \"Santa Maria\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7939761774\",\n        \"celular\": \"79981214497\",\n        \"altura\": \"1,62\",\n        \"peso\": 89,\n        \"tipo_sanguineo\": \"A+\",\n        \"cor\": \"laranja\"\n    }\n]"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 17:07:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "368"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"Gustavo Antonio Mendes\",\n        \"idade\": 21,\n        \"cpf\": \"32460613431\",\n        \"rg\": \"184760185\",\n        \"data_nasc\": \"09/04/2002\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Áries\",\n        \"mae\": \"Cristiane Mariah Alana\",\n        \"pai\": \"Anthony Rafael Francisco Mendes\",\n        \"email\": \"gustavo-mendes77@machiv.com.br\",\n        \"senha\": \"yxtnJ6soyh\",\n        \"cep\": \"69015770\",\n        \"endereco\": \"Rua 4\",\n        \"numero\": 681,\n        \"bairro\": \"Colônia Terra Nova\",\n        \"cidade\": \"Manaus\",\n        \"estado\": \"AM\",\n        \"telefone_fixo\": \"9226190988\",\n        \"celular\": \"92998994663\",\n        \"altura\": \"1,69\",\n        \"peso\": 53,\n        \"tipo_sanguineo\": \"AB-\",\n        \"cor\": \"vermelho\"\n    }\n]"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "gerar_pessoa",
+											"type": "text"
+										},
+										{
+											"key": "pontuacao",
+											"value": "N",
+											"type": "text"
+										},
+										{
+											"key": "sexo",
+											"value": "H",
+											"type": "text"
+										},
+										{
+											"key": "txt_qtde",
+											"value": "1",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 17:07:18 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "368"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"nome\": \"Gustavo Antonio Mendes\",\n        \"idade\": 21,\n        \"cpf\": \"32460613431\",\n        \"rg\": \"184760185\",\n        \"data_nasc\": \"09/04/2002\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Áries\",\n        \"mae\": \"Cristiane Mariah Alana\",\n        \"pai\": \"Anthony Rafael Francisco Mendes\",\n        \"email\": \"gustavo-mendes77@machiv.com.br\",\n        \"senha\": \"yxtnJ6soyh\",\n        \"cep\": \"69015770\",\n        \"endereco\": \"Rua 4\",\n        \"numero\": 681,\n        \"bairro\": \"Colônia Terra Nova\",\n        \"cidade\": \"Manaus\",\n        \"estado\": \"AM\",\n        \"telefone_fixo\": \"9226190988\",\n        \"celular\": \"92998994663\",\n        \"altura\": \"1,69\",\n        \"peso\": 53,\n        \"tipo_sanguineo\": \"AB-\",\n        \"cor\": \"vermelho\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "https://www.4devs.com.br/ferramentas_online.php",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"1- Validar o campo Status Code (Resultado esperado deve ser 200)\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, passando como parâmetro no campo txt_cpf a variável setada no passo 4. (Resultado Esperado Verdadeiro)\", function(){\r",
+									"    pm.expect(pm.response.text()).to.include(\"Verdadeiro\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"7- Limpar a variável CPF.\", function(){\r",
+									"    pm.globals.unset(\"CPF\");\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "acao",
+									"value": "validar_cpf",
+									"type": "text"
+								},
+								{
+									"key": "txt_cpf",
+									"value": "{{CPF}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.4devs.com.br/ferramentas_online.php",
+							"protocol": "https",
+							"host": [
+								"www",
+								"4devs",
+								"com",
+								"br"
+							],
+							"path": [
+								"ferramentas_online.php"
+							]
+						},
+						"description": "TestePrime2"
+					},
+					"response": [
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "validar_cpf",
+											"type": "text"
+										},
+										{
+											"key": "txt_cpf",
+											"value": "{{CPF}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 14:22:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "21177020904 - Verdadeiro"
+						},
+						{
+							"name": "https://www.4devs.com.br/ferramentas_online.php",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "acao",
+											"value": "validar_cpf",
+											"type": "text"
+										},
+										{
+											"key": "txt_cpf",
+											"value": "{{CPF}}",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "https://www.4devs.com.br/ferramentas_online.php",
+									"protocol": "https",
+									"host": [
+										"www",
+										"4devs",
+										"com",
+										"br"
+									],
+									"path": [
+										"ferramentas_online.php"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 10 May 2023 14:22:10 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "max-age=2592000"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "X-UA-Compatible",
+									"value": "IE=edge"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Accept-Ranges",
+									"value": "bytes"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=63072000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								}
+							],
+							"cookie": [],
+							"body": "21177020904 - Verdadeiro"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "https://www.4devs.com.br/ferramentas_online.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"1- Validar o campo Status Code (Resultado esperado deve ser 200)\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, passando como parâmetro no campo txt_cpf a variável setada no passo 4. (Resultado Esperado Verdadeiro)\", function(){\r",
+							"    pm.expect(pm.response.text()).to.include(\"Verdadeiro\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"7- Limpar a variável CPF.\", function(){\r",
+							"    pm.globals.unset(\"CPF\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "acao",
+							"value": "validar_cpf",
+							"type": "text"
+						},
+						{
+							"key": "txt_cpf",
+							"value": "{{CPF}}",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.4devs.com.br/ferramentas_online.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"4devs",
+						"com",
+						"br"
+					],
+					"path": [
+						"ferramentas_online.php"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "https://www.4devs.com.br/ferramentas_online.php",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "acao",
+									"value": "validar_cpf",
+									"type": "text"
+								},
+								{
+									"key": "txt_cpf",
+									"value": "{{CPF}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.4devs.com.br/ferramentas_online.php",
+							"protocol": "https",
+							"host": [
+								"www",
+								"4devs",
+								"com",
+								"br"
+							],
+							"path": [
+								"ferramentas_online.php"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 May 2023 14:22:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=2592000"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-UA-Compatible",
+							"value": "IE=edge"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						}
+					],
+					"cookie": [],
+					"body": "21177020904 - Verdadeiro"
+				},
+				{
+					"name": "https://www.4devs.com.br/ferramentas_online.php",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "acao",
+									"value": "validar_cpf",
+									"type": "text"
+								},
+								{
+									"key": "txt_cpf",
+									"value": "{{CPF}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.4devs.com.br/ferramentas_online.php",
+							"protocol": "https",
+							"host": [
+								"www",
+								"4devs",
+								"com",
+								"br"
+							],
+							"path": [
+								"ferramentas_online.php"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 May 2023 14:22:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=2592000"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-UA-Compatible",
+							"value": "IE=edge"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						}
+					],
+					"cookie": [],
+					"body": "21177020904 - Verdadeiro"
+				},
+				{
+					"name": "https://www.4devs.com.br/ferramentas_online.php",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "acao",
+									"value": "validar_cpf",
+									"type": "text"
+								},
+								{
+									"key": "txt_cpf",
+									"value": "{{CPF}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://www.4devs.com.br/ferramentas_online.php",
+							"protocol": "https",
+							"host": [
+								"www",
+								"4devs",
+								"com",
+								"br"
+							],
+							"path": [
+								"ferramentas_online.php"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 10 May 2023 17:31:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=2592000"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "X-UA-Compatible",
+							"value": "IE=edge"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Accept-Ranges",
+							"value": "bytes"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=63072000; includeSubDomains; preload"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "SAMEORIGIN"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "https://www.4devs.com.br/ferramentas_online.php",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Verifica se o campo \"idade\" contém um valor numérico maior que zero\r",
+							"pm.test(\"Campo 'idade' possui valor válido\", function () {\r",
+							"    var idade = pm.response.json()[0].idade;\r",
+							"    pm.expect(idade).to.be.above(0, \"A idade deve ser maior que zero\");\r",
+							"});\r",
+							"\r",
+							"// Verifica se o campo \"sexo\" é igual a \"Masculino\" na resposta\r",
+							"pm.test(\"Campo 'sexo' é igual a 'Masculino'\", function () {\r",
+							"    var sexo = pm.response.json()[0].sexo;\r",
+							"    pm.expect(sexo).to.eql(\"Masculino\");\r",
+							"});\r",
+							"\r",
+							"// Verifica se o campo \"sexo\" é igual a \"Feminino\" na resposta\r",
+							"pm.test(\"Campo 'sexo' é igual a 'Feminino'\", function () {\r",
+							"    var sexo = pm.response.json()[0].sexo;\r",
+							"    pm.expect(sexo).to.eql(\"Feminino\");\r",
+							"});\r",
+							"\r",
+							"// Extrair o response body como JSON\r",
+							"var jsonData = pm.response.json();\r",
+							"\r",
+							"// Acessar o valor do campo CPF\r",
+							"var cpf = jsonData[0].cpf;\r",
+							"\r",
+							"// Armazenar o CPF em uma variável global no Postman chamada \"CPF\"\r",
+							"pm.globals.set(\"CPF\", cpf);\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "acao",
+							"value": "gerar_pessoa",
+							"type": "text"
+						},
+						{
+							"key": "pontuacao",
+							"value": "N",
+							"type": "text"
+						},
+						{
+							"key": "sexo",
+							"value": "H",
+							"type": "text"
+						},
+						{
+							"key": "txt_qtde",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://www.4devs.com.br/ferramentas_online.php",
+					"protocol": "https",
+					"host": [
+						"www",
+						"4devs",
+						"com",
+						"br"
+					],
+					"path": [
+						"ferramentas_online.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
