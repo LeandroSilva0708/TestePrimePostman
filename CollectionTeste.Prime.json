@@ -299,7 +299,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"nome\": \"José Daniel Henry da Cruz\",\n        \"idade\": 18,\n        \"cpf\": \"54140500824\",\n        \"rg\": \"156333351\",\n        \"data_nasc\": \"20/03/2005\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n        \"mae\": \"Giovana Carla Letícia\",\n        \"pai\": \"Leonardo Renato da Cruz\",\n        \"email\": \"jose-dacruz78@band.com.br\",\n        \"senha\": \"oy5U2UAFnG\",\n        \"cep\": \"49043687\",\n        \"endereco\": \"Travessa Santa Cruz\",\n        \"numero\": 775,\n        \"bairro\": \"Santa Maria\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7939761774\",\n        \"celular\": \"79981214497\",\n        \"altura\": \"1,62\",\n        \"peso\": 89,\n        \"tipo_sanguineo\": \"A+\",\n        \"cor\": \"laranja\"\n    }\n]"
+							"body": "[\n    {\n        \"nome\": \"José Daniel Henry da Cruz\",\n        \"idade\": 18,\n        \"cpf\": \"54140500824\",\n        
+							\"rg\": \"156333351\",\n        \"data_nasc\": \"20/03/2005\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Peixes\",\n       
+							\"mae\": \"Giovana Carla Letícia\",\n        \"pai\": \"Leonardo Renato da Cruz\",\n        \"email\": \"jose-dacruz78@band.com.br\",\n        
+							\"senha\": \"oy5U2UAFnG\",\n        \"cep\": \"49043687\",\n        \"endereco\": \"Travessa Santa Cruz\",\n        \"numero\": 775,\n       
+							\"bairro\": \"Santa Maria\",\n        \"cidade\": \"Aracaju\",\n        \"estado\": \"SE\",\n        \"telefone_fixo\": \"7939761774\",\n       
+							\"celular\": \"79981214497\",\n        \"altura\": \"1,62\",\n        \"peso\": 89,\n        \"tipo_sanguineo\": \"A+\",\n        \"cor\": \"laranja\"\n    }\n]"
 						},
 						{
 							"name": "https://www.4devs.com.br/ferramentas_online.php",
@@ -403,7 +408,12 @@
 								}
 							],
 							"cookie": [],
-							"body": "[\n    {\n        \"nome\": \"Gustavo Antonio Mendes\",\n        \"idade\": 21,\n        \"cpf\": \"32460613431\",\n        \"rg\": \"184760185\",\n        \"data_nasc\": \"09/04/2002\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Áries\",\n        \"mae\": \"Cristiane Mariah Alana\",\n        \"pai\": \"Anthony Rafael Francisco Mendes\",\n        \"email\": \"gustavo-mendes77@machiv.com.br\",\n        \"senha\": \"yxtnJ6soyh\",\n        \"cep\": \"69015770\",\n        \"endereco\": \"Rua 4\",\n        \"numero\": 681,\n        \"bairro\": \"Colônia Terra Nova\",\n        \"cidade\": \"Manaus\",\n        \"estado\": \"AM\",\n        \"telefone_fixo\": \"9226190988\",\n        \"celular\": \"92998994663\",\n        \"altura\": \"1,69\",\n        \"peso\": 53,\n        \"tipo_sanguineo\": \"AB-\",\n        \"cor\": \"vermelho\"\n    }\n]"
+							"body": "[\n    {\n        \"nome\": \"Gustavo Antonio Mendes\",\n        \"idade\": 21,\n        \"cpf\": \"32460613431\",\n        
+							\"rg\": \"184760185\",\n        \"data_nasc\": \"09/04/2002\",\n        \"sexo\": \"Masculino\",\n        \"signo\": \"Áries\",\n       
+						\"mae\": \"Cristiane Mariah Alana\",\n        \"pai\": \"Anthony Rafael Francisco Mendes\",\n        \"email\": \"gustavo-mendes77@machiv.com.br\",\n       
+						\"senha\": \"yxtnJ6soyh\",\n        \"cep\": \"69015770\",\n        \"endereco\": \"Rua 4\",\n        \"numero\": 681,\n        \"bairro\": \"Colônia Terra Nova\",\n       
+						\"cidade\": \"Manaus\",\n        \"estado\": \"AM\",\n        \"telefone_fixo\": \"9226190988\",\n        \"celular\": \"92998994663\",\n        \"altura\": \"1,69\",\n       
+						\"peso\": 53,\n        \"tipo_sanguineo\": \"AB-\",\n        \"cor\": \"vermelho\"\n    }\n]"
 						}
 					]
 				},
@@ -418,7 +428,8 @@
 									"    pm.response.to.have.status(200);\r",
 									"});\r",
 									"\r",
-									"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, passando como parâmetro no campo txt_cpf a variável setada no passo 4. (Resultado Esperado Verdadeiro)\", function(){\r",
+									"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, 
+									 passando como parâmetro no campo txt_cpf a variável setada no passo 4. (Resultado Esperado Verdadeiro)\", function(){\r",
 									"    pm.expect(pm.response.text()).to.include(\"Verdadeiro\");\r",
 									"});\r",
 									"\r",
@@ -573,7 +584,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, passando como parâmetro no campo txt_cpf a variável setada no passo 4. (Resultado Esperado Verdadeiro)\", function(){\r",
+							"pm.test(\"6- Verificar se o CPF é valido fazendo a chamada do serviço validar_cpf do 4devs, passando como parâmetro no campo txt_cpf a variável setada no passo 4. 
+							(Resultado Esperado Verdadeiro)\", function(){\r",
 							"    pm.expect(pm.response.text()).to.include(\"Verdadeiro\");\r",
 							"});\r",
 							"\r",
